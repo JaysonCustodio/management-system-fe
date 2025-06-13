@@ -22,7 +22,7 @@ export class ProjectService {
 
     addProject(payload: ProjectPayload): Observable<Project> {
         return this.http.post<Project>(`${this.apiUrl}/projects`, payload).pipe(
-            tap(project => this.projects$.next([...this.projects$.value, project]))
+            tap(project => this.projects$.next([...this.projects$.value, {...project, tasks:[]}]))
         );
     }
 
