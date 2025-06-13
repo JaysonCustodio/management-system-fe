@@ -7,7 +7,7 @@
       <label class="block mb-1 text-sm font-medium text-gray-700">Title</label>
       <input formControlName="title"
         class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition text-base"
-        placeholder="Task Title"
+        placeholder=""
       />
       <div *ngIf="form.controls.title.invalid && form.controls.title.touched" class="text-xs text-red-500 mt-1">
         Title is required (min 2 chars).
@@ -18,7 +18,7 @@
       <textarea formControlName="description"
         rows="3"
         class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition text-base"
-        placeholder="Task Description"
+        placeholder=""
       ></textarea>
       <div *ngIf="form.controls.description.invalid && form.controls.description.touched" class="text-xs text-red-500 mt-1">
         Description is required (min 6 chars).

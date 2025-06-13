@@ -10,7 +10,7 @@
           type="email"
           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition text-base"
           [ngClass]="{'border-red-500': form.controls.email.invalid && form.controls.email.touched, 'border-gray-300': !(form.controls.email.invalid && form.controls.email.touched)}"
-          placeholder="you@example.com"
+          placeholder=""
         />
         <div *ngIf="form.controls.email.invalid && form.controls.email.touched" class="text-xs text-red-500 mt-1">
           Valid email is required.

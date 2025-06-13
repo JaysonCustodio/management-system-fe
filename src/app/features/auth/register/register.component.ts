@@ -45,7 +45,7 @@ export class RegisterComponent {
     this.error = '';
     this.auth.register(payload).subscribe({
       next: () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/project']);
       },
       error: err => {
         this.error = err?.error?.message || 'Registration failed';
