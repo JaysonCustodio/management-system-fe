@@ -1,28 +1,52 @@
 <div class="flex flex-col gap-8">
   <div class="flex items-center justify-between mb-6">
     <h1 class="text-3xl font-bold text-indigo-900">Tasks</h1>
-    <button (click)="onAddTask()"
-      class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">
+    <button
+      (click)="onAddTask()"
+      class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition"
+    >
       + New Task
     </button>
   </div>
   <div *ngIf="loading" class="text-center py-8 text-gray-500">Loading...</div>
-  <div *ngIf="!loading && tasks.length === 0" class="text-center py-8 text-gray-400">No tasks yet.</div>
- 
+  <div
+    *ngIf="!loading && tasks.length === 0"
+    class="text-center py-8 text-gray-400"
+  >
+    No tasks yet.
+  </div>
+
   <ul class="grid grid-cols-1 sm:grid-cols-2 gap-5" *ngIf="tasks.length > 0">
-    <li *ngFor="let task of tasks" class="bg-white rounded-xl shadow px-6 py-4 flex items-center justify-between">
+    <li
+      *ngFor="let task of tasks"
+      class="bg-white rounded-xl shadow px-6 py-4 flex items-center justify-between"
+    >
       <div>
         <div class="font-semibold text-lg text-gray-900">{{ task.title }}</div>
         <div class="text-gray-500">{{ task.description }}</div>
         <div class="text-xs text-blue-500">{{ task.status }}</div>
       </div>
       <div class="flex items-center space-x-2">
-        <button (click)="onEditTask(task.id)" class="text-indigo-600 hover:underline text-sm">Edit</button>
-        <button (click)="deleteTask(task.id)" class="text-red-600 hover:underline text-sm">Delete</button>
+        <button
+          (click)="onEditTask(task.id)"
+          class="text-indigo-600 hover:bg-gray-200 rounded-md w-16 py-1 bg-gray-100 text-sm"
+        >
+          Edit
+        </button>
+        <button
+          (click)="deleteTask(task.id)"
+          class="text-red-600 hover:bg-gray-200 text-sm btn rounded-md w-16 py-1 bg-gray-100"
+        >
+          Delete
+        </button>
       </div>
     </li>
   </ul>
   <div class="mt-8">
-    <a routerLink="/projects" class="text-gray-600 hover:text-indigo-700">&larr; Back to projects</a>
+    <a
+      routerLink="/projects"
+      class="rounded-md text-gray-600 bg-gray-200 py-2 px-3 text-sm hover:text-indigo-700"
+      >&larr; Back to projects</a
+    >
   </div>
 </div>
