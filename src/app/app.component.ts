@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { SidebarComponent } from '@/shared/sidebar/sidebar.component';
+import { AuthService } from '@/features/auth/services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [RouterModule, SidebarComponent, CommonModule]
 })
 export class AppComponent {
-  title = 'management-system-fe';
+  auth = inject(AuthService);
+  isLoggedIn$ = this.auth.isLoggedIn$;
 }
