@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
+import { authGuard } from '@/features/auth/services/auth.guard';
 
 export const PROJECTS_ROUTES: Routes = [
     {
         path: 'projects',
+        canActivate: [authGuard],
         children: [
             {
                 path: '',

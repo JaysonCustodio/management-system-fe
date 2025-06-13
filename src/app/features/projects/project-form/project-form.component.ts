@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectService } from '../services/project.service';
 import { CommonModule } from '@angular/common';
 import { Project, ProjectPayload } from '@/types/projects.types';
@@ -10,7 +10,7 @@ import { Project, ProjectPayload } from '@/types/projects.types';
   standalone: true,
   templateUrl: './project-form.component.html',
   styleUrls: ['./project-form.component.css'],
-  imports: [CommonModule, ReactiveFormsModule, RouterLink]
+  imports: [CommonModule, ReactiveFormsModule]
 })
 export class ProjectFormComponent implements OnInit {
   private fb = inject(FormBuilder);
